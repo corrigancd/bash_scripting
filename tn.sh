@@ -30,5 +30,5 @@ if [[ $note ]]; then
     echo "Note '$note' saved to $filename"
     exit 0
 else
-    echo "No input; note wasn't saved."
+    echo "No input; note wasn't saved." 1>&2 /dev/stderr # piping the echo to standard error stream
 fi
