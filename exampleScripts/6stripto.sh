@@ -19,12 +19,11 @@ fi
 while read -r || [[ $REPLY ]]; do
 	if [[ $REPLY =~ $1 ]]; then # =~ means 'contains'
 		echo "$REPLY"
-		break # the if statement could be negated and 'continue' could be used (as an alternative to 'break') in a for loop)
+		break # the IF statement could be negated and 'continue' could be used (as an alternative to 'break') in a for loop)
 	fi
 done
 
-# just print the rest of the file
-# We only need to evaluate the first condition. When the end 
+# We only need to evaluate the first condition when reading the file. When the end 
 # of the file is found (i.e. read -r is false), then we evaluate 
 # if some reply data exists and will print it (same for the while loop above)
 while read -r || [[ $REPLY ]]; do

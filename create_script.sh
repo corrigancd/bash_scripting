@@ -10,7 +10,7 @@ if [[ ! $1 ]]; then
     exit 1
 fi
 
-tempdir="${BSHOME}/temp"
+tempdir="${BSHOME}/temp" # TODO ADD OPTIONAL ARUGUMENT TO PASS THE PATH TO CREATE THE FILE
 scriptname="${1}"
 filename="${tempdir}/${scriptname}.sh"
 
