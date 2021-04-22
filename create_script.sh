@@ -10,9 +10,9 @@ if [[ ! $1 ]]; then
     exit 1
 fi
 
-tempdir="${BSHOME}/temp" # TODO ADD OPTIONAL ARUGUMENT TO PASS THE PATH TO CREATE THE FILE
+dir="${BSHOME}/exampleScripts" # TODO ADD OPTIONAL ARUGUMENT TO PASS THE PATH TO CREATE THE FILE
 scriptname="${1}"
-filename="${tempdir}/${scriptname}.sh"
+filename="${dir}/${scriptname}.sh"
 
 if [[ -e $filename ]]; then
     echo "File ${filename} already exists"
@@ -25,11 +25,11 @@ if type "$scriptname" > /dev/null 2>&1; then
 fi
 
 # This folder contains personal files which are omitted by .gitignore
-if [[ ! -d $tempdir ]]; then
-    if mkdir "$tempdir"; then # if the mkdir suceeds then the create was successful
-        echo "Created ${tempdir}"
+if [[ ! -d $dir ]]; then
+    if mkdir "$dir"; then # if the mkdir suceeds then the create was successful
+        echo "Created ${dir}"
     else
-        echo "Could not create ${bindir}."
+        echo "Could not create ${dir}."
         exit 1
     fi
 fi
